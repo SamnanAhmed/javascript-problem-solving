@@ -309,3 +309,48 @@ const checkArmstrong = (n) => {
 }
 
 checkArmstrong(153);
+
+
+// Second largest in array 
+
+const sec_max = (arr) => {
+    let largest = arr[0];
+    let second_largest = -Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            second_largest = largest;
+            largest = arr[i];
+        }
+        else if (arr[i] < largest && arr[i] > second_largest) {
+            second_largest = arr[i];
+        }
+    }
+
+    console.log(`Second largest number in array is ${second_largest}`);
+}
+
+sec_max([3, 1, 2]);
+
+
+
+// Write a function to find second smallest number in array
+
+const sec_small = (arr) => {
+
+    let smallest = arr[0];
+    let sec_smallest = Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < smallest) {
+            sec_smallest = smallest;
+            smallest = arr[i];
+        }
+        else if (arr[i] > smallest && arr[i] < sec_smallest) {
+            sec_smallest = arr[i];
+        }
+    }
+    console.log(`Smallest number in array is ${smallest} and Second smallest number in array is ${sec_smallest}`);
+}
+
+sec_small([1, 2, 3, 4, -1, -9, 100]);
