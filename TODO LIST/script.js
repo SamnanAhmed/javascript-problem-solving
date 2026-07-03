@@ -75,9 +75,10 @@ const toggleEmptyState = () => {
 // Completed Tasks stats
 
 const completedstats = () => {
+
     const count = tasks.reduce((acc, task) => {
         return task.completed ? acc + 1 : acc;
     }, 0);
-    document.getElementById('stats').innerText = `
+    document.getElementById('stats').innerHTML = `
     Completed: ${count} / ${tasks.length}`;
 }
